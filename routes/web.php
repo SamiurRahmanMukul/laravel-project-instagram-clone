@@ -20,3 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('user/{following_id}/{follower_id}/follow', [App\Http\Controllers\HomeController::class, 'follow'])->name('follow');
+Route::get('user/{following_id}/{follower_id}/unfollow', [App\Http\Controllers\HomeController::class, 'unfollow'])->name('unfollow');
+Route::get('/user/profile/{id}',[App\Http\Controllers\HomeController::class, 'userProfile']);
+Route::put('/add-bio/{id}',[App\Http\Controllers\HomeController::class, 'updateProfile']);
